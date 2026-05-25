@@ -1,0 +1,11 @@
+---
+import CategoryPage from "../../components/CategoryPage.astro";
+import { postsByCategory } from "../../utils.js";
+---
+
+<CategoryPage
+  title="Riset Energi Baru Terbarukan"
+  eyebrow="Layanan riset"
+  description="Kajian energi baru terbarukan, riset produk EBT, dan pemetaan peluang untuk masa depan energi berkelanjutan Indonesia."
+  posts={postsByCategory("riset")}
+/>

@@ -1,0 +1,119 @@
+---
+import "../styles/global.css";
+import { ChevronDown, Menu, Search, Zap } from "@lucide/astro";
+
+const {
+  title = "Indonesia Terang",
+  description = "Gerakan riset, edukasi, komunitas, dan program energi terbarukan untuk menerangi Nusantara.",
+  image = "/uploads/2024/02/Logo-Indonesia-Terang.png",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, "https://indonesia-terang.id").toString();
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/uploads/2024/02/cropped-Logo-Indonesia-Terang-32x32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/uploads/2024/02/cropped-Logo-Indonesia-Terang-180x180.png" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(image, "https://indonesia-terang.id").toString()} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Indonesia Terang">
+        <img src="/uploads/2024/02/Logo-Indonesia-Terang.png" alt="" width="56" height="56" />
+        <span>Indonesia Terang</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Buka menu" data-menu-toggle>
+        <Menu size={22} />
+      </button>
+      <nav class="site-nav" data-menu>
+        <a href="/">Beranda</a>
+        <a href="/tentang/">Tentang Pintar</a>
+        <div class="nav-item has-dropdown">
+          <a href="/layanan/" class="nav-parent">Layanan <ChevronDown size={14} /></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-item has-dropdown">
+              <a href="/layanan/riset/" class="nav-parent">Riset <ChevronDown size={14} /></a>
+              <div class="dropdown-menu dropdown-menu--nested">
+                <a href="/riset-energi-baru-terbarukan-ebt-langkah-menuju-masa-depan-berkelanjutan-indonesia/">Riset EBT</a>
+                <a href="/turbin-angin-energi-terbarukan-yang-berkelanjutan/">Riset Produk EBT</a>
+              </div>
+            </div>
+            <div class="dropdown-item has-dropdown">
+              <a href="/layanan/studi-kelayakan/" class="nav-parent">Studi Kelayakan <ChevronDown size={14} /></a>
+              <div class="dropdown-menu dropdown-menu--nested">
+                <a href="/studi-kelayakan-sederhana/">SK Sederhana</a>
+                <a href="/studi-kelayakan-profesional-langkah-penting-menuju-era-energi-berkelanjutan/">SK Profesional</a>
+              </div>
+            </div>
+            <div class="dropdown-item has-dropdown">
+              <a href="/layanan/pembelajaran/" class="nav-parent">Pembelajaran <ChevronDown size={14} /></a>
+              <div class="dropdown-menu dropdown-menu--nested">
+                <a href="/energy-hack-5-1-pv-photovoltaic-menyongsong-masa-depan-energi-bersih/">Energy Hack 5.1 PV</a>
+                <a href="/energy-hack-5-2-ev-electrical-vehicle-menerangi-masa-depan-transportasi-berkelanjutan/">Energy Hack 5.2 EV</a>
+                <a href="/energy-hack-5-3-me-management-energy-membangun-fondasi-masa-depan-energi-yang-berkelanjutan/">Energy Hack 5.3 ME</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown">
+          <a href="/komunitas/" class="nav-parent">Komunitas <ChevronDown size={14} /></a>
+          <div class="dropdown-menu">
+            <a href="/pintar-pv-membangun-komunitas-energi-surya-untuk-indonesia-yang-lebih-cerah/">Pintar PV</a>
+            <a href="/pintar-ev-menebar-energi-positif-dalam-komunitas-kendaraan-listrik-pasca-pelatihan/">Pintar EV</a>
+            <a href="/pintar-me-komunitas-penerang-masa-depan-energi-berkelanjutan/">Pintar ME</a>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown">
+          <a href="/program/" class="nav-parent">Program <ChevronDown size={14} /></a>
+          <div class="dropdown-menu">
+            <a href="/csr-esg-kunci-keberlanjutan-bisnis-dalam-industri-energi-terbarukan/">CSR & ESG</a>
+            <a href="/donasi-indonesia-terang-menyalakan-harapan-di-setiap-sudut-nusantara/">Donasi Indonesia Terang</a>
+          </div>
+        </div>
+        <a href="/berita/">Berita</a>
+        <a href="/kontak/">Kontak</a>
+      </nav>
+      <a class="header-action" href="/kontak/" aria-label="Mulai konsultasi">
+        <Zap size={18} />
+        <span>Konsultasi</span>
+      </a>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div>
+        <a class="footer-brand" href="/">
+          <img src="/uploads/2024/02/Logo-Indonesia-Terang.png" alt="" width="42" height="42" />
+          <span>Indonesia Terang</span>
+        </a>
+        <p>Riset, edukasi, dan gerakan sosial untuk akses energi bersih yang lebih merata di Indonesia.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/layanan/">Layanan</a>
+        <a href="/berita/">Artikel</a>
+        <a href="/kontak/">Kontak</a>
+      </div>
+      <form class="search-form" action="/berita/" method="get">
+        <Search size={18} />
+        <input name="q" type="search" placeholder="Cari artikel energi" />
+      </form>
+    </footer>
+    <script>
+      const toggle = document.querySelector("[data-menu-toggle]");
+      const menu = document.querySelector("[data-menu]");
+      toggle?.addEventListener("click", () => menu?.classList.toggle("is-open"));
+    </script>
+  </body>
+</html>

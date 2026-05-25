@@ -1,0 +1,11 @@
+---
+import CategoryPage from "../../components/CategoryPage.astro";
+import { postsByCategory } from "../../utils.js";
+---
+
+<CategoryPage
+  title="Studi Kelayakan"
+  eyebrow="Layanan studi"
+  description="Studi kelayakan sederhana dan profesional untuk membantu keputusan teknis, biaya, risiko, dan dampak proyek energi berkelanjutan."
+  posts={postsByCategory("studi-kelayakan")}
+/>

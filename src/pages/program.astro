@@ -1,0 +1,11 @@
+---
+import CategoryPage from "../components/CategoryPage.astro";
+import { postsByCategory } from "../utils.js";
+---
+
+<CategoryPage
+  title="Program CSR, ESG, dan Donasi"
+  eyebrow="Program"
+  description="Program keberlanjutan untuk perusahaan, komunitas, dan donatur yang ingin menghadirkan akses energi bersih bagi masyarakat."
+  posts={postsByCategory("program")}
+/>

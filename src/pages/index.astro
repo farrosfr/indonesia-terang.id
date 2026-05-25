@@ -1,0 +1,109 @@
+---
+import { ArrowUpRight, BookOpen, GraduationCap, HandHeart, Lightbulb, Microscope, Network, ShieldCheck, SunMedium, Zap } from "@lucide/astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { featuredPosts, focusStats, serviceGroups } from "../utils.js";
+---
+
+<BaseLayout>
+  <section class="hero hero--image" aria-label="Energi Baru Indonesia, solar-nusantara.id, sonushub.id">
+    <span class="sr-only">Energi Baru Indonesia. solar-nusantara.id | sonushub.id.</span>
+  </section>
+
+  <section class="stats" aria-label="Ringkasan dampak">
+    {focusStats.map(([number, label]) => (
+      <div class="stat">
+        <strong>{number}</strong>
+        <span>{label}</span>
+      </div>
+    ))}
+  </section>
+
+  <section class="content-band">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Tentang Pintar</p>
+        <h2>Platform belajar dan bergerak untuk energi masa depan.</h2>
+      </div>
+      <p>
+        Indonesia Terang menghubungkan riset, pelatihan, komunitas, dan program CSR/ESG agar proyek energi bersih punya dasar yang kuat dan dampak yang terasa.
+      </p>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-item">
+        <SunMedium size={34} />
+        <h3>Surya</h3>
+        <p>Penguatan literasi dan implementasi photovoltaic untuk kebutuhan rumah, komunitas, dan proyek.</p>
+      </div>
+      <div class="impact-item">
+        <Zap size={34} />
+        <h3>Kendaraan Listrik</h3>
+        <p>Pembelajaran EV dan ekosistem transportasi rendah emisi yang relevan untuk Indonesia.</p>
+      </div>
+      <div class="impact-item">
+        <Lightbulb size={34} />
+        <h3>Manajemen Energi</h3>
+        <p>Kerangka penghematan, audit sederhana, dan pengambilan keputusan berbasis data.</p>
+      </div>
+      <div class="impact-item">
+        <HandHeart size={34} />
+        <h3>Donasi Listrik</h3>
+        <p>Gerakan sosial untuk menyalakan harapan di wilayah yang belum menikmati akses listrik memadai.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-band content-band--soft">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Layanan</p>
+        <h2>Dari kajian sampai komunitas pasca pelatihan.</h2>
+      </div>
+      <p>Setiap layanan disusun agar mudah masuk ke kebutuhan sekolah, desa, perusahaan, dan organisasi yang ingin memulai transisi energi.</p>
+    </div>
+    <div class="service-grid">
+      {serviceGroups.map((service, index) => {
+        const Icon = [Microscope, ShieldCheck, GraduationCap][index];
+        return (
+          <a class="service-card" href={`/layanan/${service.slug}/`}>
+            <Icon size={38} />
+            <div>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <span class="text-link">Lihat detail <ArrowUpRight size={16} /></span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="content-band">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Komunitas</p>
+        <h2>Pintar PV, Pintar EV, dan Pintar ME.</h2>
+      </div>
+      <p>Komunitas pasca pelatihan menjaga momentum peserta lewat praktik, diskusi, dan kolaborasi proyek energi bersih.</p>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-item"><Network size={34} /><h3>Pintar PV</h3><p>Komunitas energi surya untuk Indonesia yang lebih cerah.</p></div>
+      <div class="impact-item"><Network size={34} /><h3>Pintar EV</h3><p>Ruang belajar kendaraan listrik dan transportasi berkelanjutan.</p></div>
+      <div class="impact-item"><Network size={34} /><h3>Pintar ME</h3><p>Komunitas manajemen energi untuk efisiensi dan keberlanjutan.</p></div>
+      <div class="impact-item"><BookOpen size={34} /><h3>Energy Hack</h3><p>Kelas ringkas yang fokus pada skill praktis dan studi kasus.</p></div>
+    </div>
+  </section>
+
+  <section class="content-band content-band--soft">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Artikel terbaru</p>
+        <h2>Riset, program, dan pembelajaran energi.</h2>
+      </div>
+      <p>Konten lama WordPress dipertahankan sebagai halaman Astro yang cepat, bersih, dan siap diindeks ulang.</p>
+    </div>
+    <div class="post-grid">
+      {featuredPosts.map((post) => <PostCard post={post} />)}
+    </div>
+  </section>
+</BaseLayout>

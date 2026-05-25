@@ -1,0 +1,23 @@
+{
+  "name": "indonesia-terang.id",
+  "version": "1.0.0",
+  "description": "Astro rebuild of indonesia-terang.id",
+  "scripts": {
+    "dev": "astro dev",
+    "sync:wp": "node scripts/sync-wordpress.mjs",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
+    "@lucide/astro": "^1.16.0",
+    "astro": "^6.3.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
+  }
+}

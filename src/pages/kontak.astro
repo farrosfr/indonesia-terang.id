@@ -1,0 +1,32 @@
+---
+import { Mail, MapPin, MessageCircle } from "@lucide/astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Kontak | Indonesia Terang" description="Hubungi Indonesia Terang untuk riset, pelatihan, komunitas, CSR, ESG, dan program donasi energi.">
+  <section class="page-hero page-hero--compact">
+    <p class="eyebrow">Kontak</p>
+    <h1>Mulai diskusi energi bersih.</h1>
+    <p>Ceritakan kebutuhan riset, pelatihan, studi kelayakan, komunitas, atau program penerangan yang ingin dijalankan.</p>
+  </section>
+  <section class="content-band">
+    <div class="contact-grid">
+      <div class="contact-panel">
+        <h2>Indonesia Terang</h2>
+        <p><Mail size={18} /> halo@indonesia-terang.id</p>
+        <p><MessageCircle size={18} /> WhatsApp: 0811-0000-0000</p>
+        <p><MapPin size={18} /> Indonesia</p>
+      </div>
+      <div class="contact-panel">
+        <form name="contact" method="post" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+          <input name="name" autocomplete="name" placeholder="Nama" required />
+          <input name="email" type="email" autocomplete="email" placeholder="Email" required />
+          <input name="topic" placeholder="Topik kebutuhan" />
+          <textarea name="message" placeholder="Pesan" required></textarea>
+          <button class="button" type="submit">Kirim pesan</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

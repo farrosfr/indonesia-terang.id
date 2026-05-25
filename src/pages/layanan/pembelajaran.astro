@@ -1,0 +1,11 @@
+---
+import CategoryPage from "../../components/CategoryPage.astro";
+import { postsByCategory } from "../../utils.js";
+---
+
+<CategoryPage
+  title="Pembelajaran Energy Hack"
+  eyebrow="Layanan pembelajaran"
+  description="Kelas Energy Hack untuk PV, EV, dan manajemen energi agar peserta memahami teknologi, peluang, dan praktik lapangannya."
+  posts={postsByCategory("pembelajaran")}
+/>

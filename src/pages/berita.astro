@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { posts } from "../utils.js";
+---
+
+<BaseLayout title="Berita | Indonesia Terang" description="Artikel Indonesia Terang tentang riset, pembelajaran, komunitas, dan program energi terbarukan.">
+  <section class="page-hero page-hero--compact">
+    <p class="eyebrow">Berita</p>
+    <h1>Artikel energi terbarukan Indonesia Terang.</h1>
+    <p>Arsip konten dari situs WordPress lama sudah dipindahkan ke halaman Astro yang lebih cepat dan bersih.</p>
+  </section>
+  <section class="content-band">
+    <div class="post-grid">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </section>
+</BaseLayout>

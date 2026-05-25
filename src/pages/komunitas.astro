@@ -1,0 +1,11 @@
+---
+import CategoryPage from "../components/CategoryPage.astro";
+import { postsByCategory } from "../utils.js";
+---
+
+<CategoryPage
+  title="Komunitas Pintar"
+  eyebrow="Komunitas"
+  description="Pintar PV, Pintar EV, dan Pintar ME menjaga pembelajaran energi tetap hidup melalui jejaring, diskusi, dan praktik bersama."
+  posts={postsByCategory("komunitas")}
+/>

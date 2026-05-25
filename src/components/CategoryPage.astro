@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "./PostCard.astro";
+
+const { title, description, posts, eyebrow = "Indonesia Terang" } = Astro.props;
+---
+
+<BaseLayout title={`${title} | Indonesia Terang`} description={description}>
+  <section class="page-hero page-hero--compact">
+    <div>
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </div>
+  </section>
+  <section class="content-band">
+    <div class="section-heading">
+      <p class="eyebrow">Daftar artikel</p>
+      <h2>Konten terkait</h2>
+    </div>
+    <div class="post-grid">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </section>
+</BaseLayout>

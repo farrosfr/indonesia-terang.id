@@ -1,0 +1,30 @@
+---
+import { ArrowUpRight, GraduationCap, Microscope, ShieldCheck } from "@lucide/astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { serviceGroups } from "../utils.js";
+---
+
+<BaseLayout title="Layanan | Indonesia Terang" description="Riset EBT, studi kelayakan, dan pembelajaran energi terbarukan dari Indonesia Terang.">
+  <section class="page-hero page-hero--compact">
+    <p class="eyebrow">Layanan</p>
+    <h1>Layanan energi bersih yang siap dipakai.</h1>
+    <p>Mulai dari riset potensi, studi kelayakan, sampai pembelajaran teknis untuk membangun kapasitas tim dan komunitas.</p>
+  </section>
+  <section class="content-band">
+    <div class="service-grid">
+      {serviceGroups.map((service, index) => {
+        const Icon = [Microscope, ShieldCheck, GraduationCap][index];
+        return (
+          <a class="service-card" href={`/layanan/${service.slug}/`}>
+            <Icon size={40} />
+            <div>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <span class="text-link">Buka layanan <ArrowUpRight size={16} /></span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>
