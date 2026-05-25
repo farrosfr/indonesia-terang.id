@@ -4,8 +4,8 @@
   --line: #dfe8e2;
   --paper: #ffffff;
   --soft: #f3f7f0;
-  --green: #18864f;
-  --green-dark: #0f5c39;
+  --green: #08713f;
+  --green-dark: #084b30;
   --sun: #f6b443;
   --water: #2679a8;
   --max: 1180px;
@@ -201,7 +201,7 @@ img {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background-image: url("/uploads/2025/12/Project-Lisdes-1000-Titik-2.jpg");
+  background-image: url("/uploads/2025/12/Project-Lisdes-1000-Titik-2-1536x864.jpg");
   background-size: cover;
   background-position: center;
 }

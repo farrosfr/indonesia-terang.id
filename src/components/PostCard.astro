@@ -4,12 +4,15 @@ import { formatDate } from "../utils.js";
 
 const { post, compact = false } = Astro.props;
 const category = post.categories[0]?.name ?? "Artikel";
+const cardImage = post.image?.includes("/Desain-tanpa-judul-")
+  ? post.image.replace(/(\.[a-z]+)$/i, compact ? "-300x118$1" : "-768x302$1")
+  : post.image;
 ---
 
 <article class:list={["post-card", compact && "post-card--compact"]}>
-  {post.image && <img src={post.image} alt="" loading="lazy" />}
+  {cardImage && <img src={cardImage} alt="" loading="lazy" width={compact ? 300 : 768} height={compact ? 118 : 302} />}
   <div>
-    <p class="eyebrow">{category} · {formatDate(post.date)}</p>
+    <p class="eyebrow">{category} - {formatDate(post.date)}</p>
     <h3><a href={`/${post.slug}/`}>{post.title}</a></h3>
     {!compact && <p>{post.excerpt}</p>}
     <a class="text-link" href={`/${post.slug}/`}>
