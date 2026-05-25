@@ -615,23 +615,37 @@ textarea {
 }
 
 @media (max-width: 560px) {
+  .site-header {
+    padding: 12px 18px;
+  }
+
   .brand span,
   .header-action span {
     display: none;
   }
 
   h1 {
-    font-size: clamp(2.9rem, 17vw, 4.4rem);
+    font-size: clamp(2.35rem, 11vw, 3rem);
+  }
+
+  .page-hero {
+    width: min(var(--max), calc(100% - 32px));
+    padding: 48px 0 32px;
+  }
+
+  .page-hero--compact h1 {
+    max-width: 100%;
+    font-size: clamp(2.1rem, 10vw, 2.75rem);
   }
 
   .article-hero h1 {
     max-width: 100%;
-    font-size: clamp(2.15rem, 12vw, 3.2rem);
+    font-size: clamp(1.95rem, 8.5vw, 2.45rem);
   }
 
   .hero {
     aspect-ratio: 16 / 9;
-    min-height: 420px;
+    min-height: 0;
     background: #0f251a;
   }
 
