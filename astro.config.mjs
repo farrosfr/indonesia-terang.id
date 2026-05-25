@@ -32,6 +32,9 @@ export default defineConfig({
   site: "https://indonesia-terang.id",
   trailingSlash: "always",
   integrations: [sitemap()],
+  build: {
+    inlineStylesheets: "always",
+  },
   redirects: {
     ...pageRedirects,
     ...categoryRedirects,
