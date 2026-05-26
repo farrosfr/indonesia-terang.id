@@ -12,44 +12,35 @@ import { Button } from "@/components/ui/button";
   </section>
   <section class="content-band">
     <div class="contact-grid">
-      <div class="contact-panel flex flex-col gap-6 group">
+      <div class="contact-panel flex flex-col gap-6">
         <div>
           <h2 class="text-2xl font-bold text-ink mb-1">Indonesia Terang</h2>
           <p class="text-muted-site m-0">Pusat Desain Industri Nasional (PDIN)</p>
         </div>
         
-        <div class="flex flex-col gap-5">
-          <div class="flex items-center gap-4 hover:translate-x-1 transition-transform">
-            <div class="w-11 h-11 rounded-xl bg-soft flex items-center justify-center text-green shadow-sm">
-              <Mail size={22} />
+        <div class="flex flex-col gap-4">
+          <a href="mailto:admin@solar-nusantara.id" class="flex items-center gap-3 text-ink hover:text-green transition-colors group">
+            <div class="w-9 h-9 rounded-full bg-soft flex items-center justify-center text-green group-hover:bg-green group-hover:text-white transition-colors">
+              <Mail size={18} />
             </div>
-            <div>
-              <p class="text-[10px] font-bold uppercase tracking-widest text-muted-site mb-1 m-0 opacity-70">Email</p>
-              <a href="mailto:admin@solar-nusantara.id" class="text-ink hover:text-green transition-colors font-semibold block">admin@solar-nusantara.id</a>
-            </div>
-          </div>
+            <span class="font-medium">admin@solar-nusantara.id</span>
+          </a>
 
-          <div class="flex items-center gap-4 hover:translate-x-1 transition-transform">
-            <div class="w-11 h-11 rounded-xl bg-soft flex items-center justify-center text-green shadow-sm">
-              <MessageCircle size={22} />
+          <a href="https://wa.me/6282180000575" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-ink hover:text-green transition-colors group">
+            <div class="w-9 h-9 rounded-full bg-soft flex items-center justify-center text-green group-hover:bg-green group-hover:text-white transition-colors">
+              <MessageCircle size={18} />
             </div>
-            <div>
-              <p class="text-[10px] font-bold uppercase tracking-widest text-muted-site mb-1 m-0 opacity-70">WhatsApp</p>
-              <a href="https://wa.me/6282180000575" target="_blank" rel="noopener noreferrer" class="text-ink hover:text-green transition-colors font-semibold block">+62 821-8000-0575</a>
-            </div>
-          </div>
+            <span class="font-medium">+62 821-8000-0575</span>
+          </a>
 
-          <div class="flex items-start gap-4 hover:translate-x-1 transition-transform">
-            <div class="w-11 h-11 rounded-xl bg-soft flex items-center justify-center text-green shadow-sm flex-shrink-0">
-              <MapPin size={22} />
+          <div class="flex items-start gap-3 text-ink">
+            <div class="w-9 h-9 rounded-full bg-soft flex items-center justify-center text-green flex-shrink-0">
+              <MapPin size={18} />
             </div>
-            <div>
-              <p class="text-[10px] font-bold uppercase tracking-widest text-muted-site mb-1 m-0 opacity-70">Alamat</p>
-              <p class="text-ink font-semibold leading-relaxed m-0">
-                Jl. C. Simanjuntak No. 19, Terban, Kec. Gondokusuman, <br />
-                Kota Yogyakarta, DIY 55223
-              </p>
-            </div>
+            <p class="font-medium m-0 leading-relaxed pt-1">
+              Jl. C. Simanjuntak No. 19, Terban, Kec. Gondokusuman, <br />
+              Kota Yogyakarta, DIY 55223
+            </p>
           </div>
         </div>
       </div>
