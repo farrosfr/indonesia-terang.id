@@ -1,6 +1,7 @@
 ---
 import { Mail, MapPin, MessageCircle } from "@lucide/astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Button } from "@/components/ui/button";
 ---
 
 <BaseLayout title="Kontak | Indonesia Terang" description="Hubungi Indonesia Terang untuk riset, pelatihan, komunitas, CSR, ESG, dan program donasi energi.">
@@ -11,20 +12,63 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
   <section class="content-band">
     <div class="contact-grid">
-      <div class="contact-panel">
-        <h2>Indonesia Terang</h2>
-        <p><Mail size={18} /> admin@solar-nusantara.id</p>
-        <p><MessageCircle size={18} /> WhatsApp: +62 821-8000-0575</p>
-        <p><MapPin size={18} /> Jl. C. Simanjuntak No. 19, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223</p>
+      <div class="contact-panel flex flex-col gap-6 group">
+        <div>
+          <h2 class="text-2xl font-bold text-ink mb-1">Indonesia Terang</h2>
+          <p class="text-muted-site m-0">Pusat Desain Industri Nasional (PDIN)</p>
+        </div>
+        
+        <div class="flex flex-col gap-5">
+          <div class="flex items-center gap-4 hover:translate-x-1 transition-transform">
+            <div class="w-11 h-11 rounded-xl bg-soft flex items-center justify-center text-green shadow-sm">
+              <Mail size={22} />
+            </div>
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-muted-site mb-1 m-0 opacity-70">Email</p>
+              <a href="mailto:admin@solar-nusantara.id" class="text-ink hover:text-green transition-colors font-semibold block">admin@solar-nusantara.id</a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 hover:translate-x-1 transition-transform">
+            <div class="w-11 h-11 rounded-xl bg-soft flex items-center justify-center text-green shadow-sm">
+              <MessageCircle size={22} />
+            </div>
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-muted-site mb-1 m-0 opacity-70">WhatsApp</p>
+              <a href="https://wa.me/6282180000575" target="_blank" rel="noopener noreferrer" class="text-ink hover:text-green transition-colors font-semibold block">+62 821-8000-0575</a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 hover:translate-x-1 transition-transform">
+            <div class="w-11 h-11 rounded-xl bg-soft flex items-center justify-center text-green shadow-sm flex-shrink-0">
+              <MapPin size={22} />
+            </div>
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-widest text-muted-site mb-1 m-0 opacity-70">Alamat</p>
+              <p class="text-ink font-semibold leading-relaxed m-0">
+                Jl. C. Simanjuntak No. 19, Terban, Kec. Gondokusuman, <br />
+                Kota Yogyakarta, DIY 55223
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="contact-panel">
-        <form name="contact" method="post" data-netlify="true">
+      <div class="contact-panel flex flex-col gap-6">
+        <div>
+          <h2 class="text-2xl font-bold text-ink mb-1">Kirim Pesan</h2>
+          <p class="text-muted-site m-0">Kami akan merespon pesan Anda secepatnya.</p>
+        </div>
+        <form name="contact" method="post" data-netlify="true" class="flex flex-col gap-4">
           <input type="hidden" name="form-name" value="contact" />
-          <input name="name" autocomplete="name" placeholder="Nama" required />
-          <input name="email" type="email" autocomplete="email" placeholder="Email" required />
-          <input name="topic" placeholder="Topik kebutuhan" />
-          <textarea name="message" placeholder="Pesan" required></textarea>
-          <button class="button" type="submit">Kirim pesan</button>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input name="name" autocomplete="name" placeholder="Nama Lengkap" required class="bg-soft border-none focus:ring-2 focus:ring-green/20" />
+            <input name="email" type="email" autocomplete="email" placeholder="Email Address" required class="bg-soft border-none focus:ring-2 focus:ring-green/20" />
+          </div>
+          <input name="topic" placeholder="Topik atau Subjek" class="bg-soft border-none focus:ring-2 focus:ring-green/20" />
+          <textarea name="message" placeholder="Tulis pesan Anda di sini..." required rows="4" class="bg-soft border-none focus:ring-2 focus:ring-green/20 resize-none"></textarea>
+          <Button type="submit" className="w-full bg-green hover:bg-green-dark text-white font-bold py-6 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-[0.98]">
+            Kirim Pesan Sekarang
+          </Button>
         </form>
       </div>
     </div>

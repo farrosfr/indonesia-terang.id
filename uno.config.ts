@@ -20,6 +20,18 @@ export default defineConfig({
       warn: true,
     }),
   ],
+  theme: {
+    colors: {
+      green: 'var(--green)',
+      'green-dark': 'var(--green-dark)',
+      ink: 'var(--ink)',
+      'muted-site': 'var(--muted-site)',
+      soft: 'var(--soft)',
+      line: 'var(--line)',
+      sun: 'var(--sun)',
+      water: 'var(--water)',
+    }
+  },
   transformers: [
     transformerDirectives(),
     transformerVariantGroup(),
