@@ -2,6 +2,9 @@ import { readFileSync } from "node:fs";
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
+import react from "@astrojs/react";
+import UnoCSS from "unocss/astro";
+
 const data = JSON.parse(readFileSync(new URL("./src/data.json", import.meta.url), "utf8"));
 
 const pageRedirects = {
@@ -31,8 +34,7 @@ const postRedirects = Object.fromEntries(
 export default defineConfig({
   site: "https://indonesia-terang.id",
   trailingSlash: "always",
-  integrations: [sitemap()],
-  build: {
+  integrations: [sitemap(), react(), UnoCSS({ injectReset: true })],  build: {
     inlineStylesheets: "always",
   },
   redirects: {

@@ -13,11 +13,28 @@
   "license": "UNLICENSED",
   "type": "module",
   "dependencies": {
+    "@astrojs/react": "^5.0.5",
     "@astrojs/sitemap": "^3.7.2",
     "@lucide/astro": "^1.16.0",
-    "astro": "^6.3.7"
+    "@radix-ui/react-slot": "^1.2.4",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "astro": "^6.3.7",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.16.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.60.0"
+    "@iconify-json/lucide": "^1.2.109",
+    "@playwright/test": "^1.60.0",
+    "@unocss/astro": "^66.7.0",
+    "@unocss/preset-attributify": "^66.7.0",
+    "@unocss/preset-icons": "^66.7.0",
+    "@unocss/preset-uno": "^66.7.0",
+    "@unocss/transformer-directives": "^66.7.0",
+    "unocss": "^66.7.0"
   }
 }

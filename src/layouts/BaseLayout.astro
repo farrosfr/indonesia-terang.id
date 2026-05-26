@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { ChevronDown, Menu, Search, Zap } from "@lucide/astro";
+import { Button } from "@/components/ui/button";
 
 const {
   title = "Indonesia Terang",
@@ -84,32 +85,39 @@ const canonical = new URL(Astro.url.pathname, "https://indonesia-terang.id").toS
         <a href="/berita/">Berita</a>
         <a href="/kontak/">Kontak</a>
       </nav>
-      <a class="header-action" href="/kontak/" aria-label="Mulai konsultasi">
-        <Zap size={18} />
-        <span>Konsultasi</span>
-      </a>
+      <Button asChild className="header-action">
+        <a href="/kontak/" aria-label="Mulai konsultasi">
+          <Zap size={18} />
+          <span>Konsultasi</span>
+        </a>
+      </Button>
     </header>
     <main>
       <slot />
     </main>
     <footer class="site-footer">
-      <div>
-        <a class="footer-brand" href="/">
-          <img src="/uploads/2024/02/cropped-Logo-Indonesia-Terang-180x180.png" alt="" width="42" height="42" />
-          <span>Indonesia Terang</span>
-        </a>
-        <p>Riset, edukasi, dan gerakan sosial untuk akses energi bersih yang lebih merata di Indonesia.</p>
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/">
+            <img src="/uploads/2024/02/cropped-Logo-Indonesia-Terang-180x180.png" alt="" width="42" height="42" />
+            <span>Indonesia Terang</span>
+          </a>
+          <p>Riset, edukasi, dan gerakan sosial untuk akses energi bersih yang lebih merata di Indonesia.</p>
+        </div>
+        <div class="footer-links">
+          <a href="/layanan/">Layanan</a>
+          <a href="/berita/">Artikel</a>
+          <a href="/kontak/">Kontak</a>
+        </div>
+        <form class="search-form" action="/berita/" method="get">
+          <Search size={18} />
+          <input name="q" type="search" placeholder="Cari artikel energi" />
+        </form>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; {new Date().getFullYear()} All rights reserved PT Tripower Solar Nusantara</p>
         <p class="site-credit">Website by <a href="https://farrosfr.com" target="_blank" rel="noopener noreferrer">Farros FR</a></p>
       </div>
-      <div class="footer-links">
-        <a href="/layanan/">Layanan</a>
-        <a href="/berita/">Artikel</a>
-        <a href="/kontak/">Kontak</a>
-      </div>
-      <form class="search-form" action="/berita/" method="get">
-        <Search size={18} />
-        <input name="q" type="search" placeholder="Cari artikel energi" />
-      </form>
     </footer>
     <script>
       const toggle = document.querySelector("[data-menu-toggle]");
