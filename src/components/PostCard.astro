@@ -14,7 +14,7 @@ const cardImage = post.image?.includes("/Desain-tanpa-judul-")
   <div>
     <p class="eyebrow">{category} - {formatDate(post.date)}</p>
     <h3><a href={`/${post.slug}/`}>{post.title}</a></h3>
-    {!compact && <p>{post.excerpt}</p>}
+    {!compact && <p>{post.excerpt?.length > 160 ? post.excerpt.slice(0, 160) + "..." : post.excerpt}</p>}
     <a class="text-link" href={`/${post.slug}/`}>
       Baca artikel
       <ArrowUpRight size={16} />
